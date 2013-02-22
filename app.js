@@ -37,6 +37,7 @@ app.get('/signup', signup.form);
 app.get('/users', user.list);
 app.get('/users/:id', user.get);
 app.post('/users', user.add);
+app.delete('/users/:id', user.delete);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

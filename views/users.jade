@@ -10,12 +10,17 @@ block content
           th Nome
           th País
           th Email
+          th Ações
         for user in users
           tr
             td
               a(href='/users/'+user._id)= user.nome
             td= user.pais
             td= user.email
+            td
+              form(action='/users/'+user._id, method="DELETE")
+                button(type='submit').btn.btn-danger.btn-mini
+                  i.icon.icon-white.icon-trash
     - else
       p Não há usuários cadastrados
 

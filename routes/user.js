@@ -81,6 +81,23 @@ exports.add = function(req, res) {
   });
 }
 
+// DELETE
+exports.delete = function (req, res) {
+  var id = req.params.id;
+  console.log('Deleting user: ' + id);
+
+  db.collection('users', function (err, collection) {
+    collection.remove({ '_id' : new BSON.ObjectID(id) }, { safe: true }, function (err, result ) {
+      if (err) {
+        res.end();
+      } else {
+        console.log(''+ result +' deletado');
+        res.redirect('/users');
+      }
+    });
+  });
+}
+
 
 
 
