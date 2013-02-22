@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  .span12
+    h1 Cadastro
+
+    form(action='')
+      fieldset
+        legend Preencha o Cadastro abaixo
+
+        .control-group
+          label(for='nome') Nome
+          input#nome(type='text', name='nome', class='input', placeholder='Nome')
+
+        .control-group
+          label(for='email') Email
+          input#email(type='email', name='email', class='input', placeholder='email')
+
+        .control-buttons
+          input#btnSend(type='submit', class='btn btn-primary')
