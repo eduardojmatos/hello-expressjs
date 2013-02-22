@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .span12
+    h1 Usuários
+
+    - if (users.length)
+      table.table.table-stripped.table-rounded
+        tr
+          th Nome
+          th País
+          th Email
+        for user in users
+          tr
+            td
+              a(href='/users/'+user._id)= user.nome
+            td= user.pais
+            td= user.email
+    - else
+      p Não há usuários cadastrados
+
+
+    p
+      a(href='/signup') Clique aqui para adicionar

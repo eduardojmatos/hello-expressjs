@@ -4,7 +4,7 @@ block content
   .span12
     h1 Cadastro
 
-    form(action='')
+    form(action='/users', method="POST")
       fieldset
         legend Preencha o Cadastro abaixo
 
@@ -14,7 +14,11 @@ block content
 
         .control-group
           label(for='email') Email
-          input#email(type='email', name='email', class='input', placeholder='email')
+          input#email(type='email', name='email', class='input', placeholder='Email')
+
+        .control-group
+          label(for='pais') País
+          input#pais(type='text', name='pais', class='input', placeholder='País')
 
         .control-buttons
           input#btnSend(type='submit', class='btn btn-primary')
